@@ -84,6 +84,14 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     @Test
+    public void selecting_items_from_the_menu_should_display_total_cost_of_the_items_selected() {
+        List<String> itemsSelected = new ArrayList<>();
+        itemsSelected.add(restaurant.getMenu().get(0).getName());
+        itemsSelected.add(restaurant.getMenu().get(1).getName());
+        int costOfItems = restaurant.totalItemsCost(itemsSelected);
+        assertEquals(388, costOfItems);
+    }
+    @Test
     public void failing_testcase() {
         List<String> itemsSelected = new ArrayList<>();
         itemsSelected.add(restaurant.getMenu().get(0).getName());
